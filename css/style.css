@@ -1,0 +1,571 @@
+/* style.css */
+:root {
+    --color-bg: #ffffff;
+    --color-text: #2d3e50;
+    --color-primary: #4a90e2;
+    --color-primary-light: #e3f0ff;
+    --color-secondary: #7b68ee;
+    --color-accent: #ffb347;
+    --color-gray: #f8f9fa;
+    --color-border: #e9ecef;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --radius: 16px;
+    --font-main: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text);
+    line-height: 1.6;
+    background-color: var(--color-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* height: 70px; */
+}
+
+.logo {
+    width: 100px;
+}
+
+/* .logo img {
+    
+}
+.logo p {
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    color: var(--color-primary);
+} */
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav__list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav__link:hover,
+.nav__link.active {
+    color: var(--color-primary);
+}
+
+.nav__toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--color-text);
+}
+.nav__toggle img {
+    width: 40px;
+}
+/* Hero section */
+.hero {
+    padding: 60px 0 40px;
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, #fff 80%);
+}
+
+.hero__title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: var(--color-text);
+}
+
+.hero__text {
+    font-size: 1.1rem;
+    max-width: 800px;
+    background: white;
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.hero__text p {
+    margin-bottom: 16px;
+}
+
+.hero__text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Section titles */
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+
+/* Cards (общие) */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--color-border);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card__emoji {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.card__title {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.card__desc {
+    color: #5a6b7a;
+    margin-bottom: 20px;
+    flex: 1;
+}
+.card__link {
+    text-decoration: none;
+    color: unset;
+    
+}
+.card__link:hover {
+    text-decoration: none;
+    color: unset;
+}
+.card__more {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* .card__more:hover {
+    text-decoration: underline;
+} */
+
+/* Features (как проходят курсы) */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.feature {
+    background: var(--color-gray);
+    padding: 32px 24px;
+    border-radius: var(--radius);
+    position: relative;
+    border: 1px solid var(--color-border);
+}
+
+.feature__number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    opacity: 0.2;
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    line-height: 1;
+}
+
+.feature h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+    padding-right: 3rem;
+}
+
+.feature p {
+    color: #4a5a6a;
+}
+
+/* Differences */
+.differences {
+    background-color: var(--color-primary-light);
+    padding: 60px 0;
+}
+
+.differences__list {
+    list-style: none;
+    margin: 20px 0 30px;
+}
+
+.differences__list li {
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.differences__list li::before {
+    content: "•";
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.differences__note {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 30px 0 10px;
+    color: var(--color-primary);
+}
+
+/* Materials */
+.materials {
+    padding: 60px 0;
+}
+
+.materials__subtitle {
+    font-size: 1.2rem;
+
+}
+
+.material-card {
+    text-align: center;
+}
+
+.material-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.material-card p {
+    color: #5a6b7a;
+    /* margin-bottom: 20px; */
+}
+.materials .materials__contact {
+    color: var(--color-primary);
+
+    font-weight: 500;
+    /* display: inline-flex; */
+    align-items: center;
+    /* gap: 4px; */
+
+    margin: 10px 0 30px 0;
+} 
+.materials .materials__contact a {
+    text-decoration: none;
+    color: unset;
+}
+.price {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    border: 1px solid var(--color-primary);
+}
+
+.btn:hover {
+    background: #3a7bc8;
+}
+
+.btn--outline {
+    background: transparent;
+    color: var(--color-primary);
+}
+
+.btn--outline:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Страницы курсов */
+.course-page {
+    padding: 60px 0;
+}
+
+.course-page__title {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+    color: var(--color-text);
+}
+
+.course-page__content {
+    background: white;
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+}
+.course-page__content .content-topic {
+    margin-bottom: 25px;
+}
+
+.course-page__content h2 {
+    font-size: 1.8rem;
+    margin: 30px 0 20px;
+    color: var(--color-primary);
+}
+
+.course-page__content h2:first-of-type {
+    margin-top: 0;
+}
+
+.course-page__content ol,
+.course-page__content ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.course-page__content li {
+    margin-bottom: 8px;
+}
+
+.course-page__closing {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed var(--color-border);
+}
+
+.course-page__nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+/* Contats */
+.contacts__title {
+    position: relative;
+    font-size: 2rem;
+    margin: 30px 0 40px 0;
+    font-weight: 600;
+    color: var(--color-text);
+}
+.contacts__title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+.contacts__buttons {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 20px;
+    margin: 20px 0 50% 0;
+}
+.contacts__buttons h2 {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+.contacts__buttons a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    min-width: 30%;
+    width: max-content;
+    text-decoration: none;
+    color: unset;
+    border-radius: 8px;
+    gap: 10px;
+    font-size: 18px;
+}
+.contacts__buttons a img {
+    width: 35px;
+    height: 35px;
+}
+.contacts__buttons a p {
+
+}
+.contacts__buttons .button-vk {
+    background-color: #0077FF;
+    color: white;
+
+}
+.contacts__buttons .button-phone {
+    background-color: #C4C4C4;
+}
+
+/* Footer */
+.footer {
+    background: var(--color-text);
+    color: white;
+    padding: 24px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+.footer .container {
+    display: flex;
+    
+}
+.footer .container a {
+    color: unset;
+    text-decoration: none;
+}
+.footer .container span {
+    color: aquamarine;
+}
+
+
+@media (max-width: 768px) {
+    .header__container {
+        height: auto;
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+    .contacts__buttons a {
+        width: 90%;
+    }
+    .nav__toggle {
+        display: block;
+    }
+
+    .nav__list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+        padding: 20px 0;
+    }
+
+    .nav__list.active {
+        display: flex;
+    }
+
+    .nav__link {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .hero__text {
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .course-page__title {
+        font-size: 2rem;
+    }
+
+    .course-page__content {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: 1.6rem;
+    }
+
+    .hero__text {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
