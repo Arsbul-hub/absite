@@ -283,6 +283,63 @@ body {
     margin: 30px 0 10px;
     color: var(--color-primary);
 }
+/* Founder */
+
+
+.founder {
+    margin: 60px 0;
+}
+
+.founder-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--color-gray);
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.founder-card:hover {
+    transform: translateY(-5px);
+}
+
+.founder-photo {
+    flex-shrink: 0;
+    width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+.founder-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.founder-photo img:hover {
+    transform: scale(1.02);
+}
+
+.founder-info h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--color-text);
+}
+
+.founder-title {
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+
+
 
 /* Materials */
 .materials {
@@ -553,6 +610,16 @@ body {
 
     .course-page__content {
         padding: 25px;
+    }
+    .founder-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .founder-photo {
+        width: 300px;
+        /* margin-bottom: 20px; */
     }
 }
 
