@@ -296,7 +296,7 @@ body {
     gap: 20px;
     background: var(--color-gray);
     border-radius: var(--radius);
-    padding: 40px;
+    padding: 20px;
     box-shadow: var(--shadow);
     transition: transform 0.3s;
 }
@@ -614,7 +614,7 @@ body {
     .founder-card {
         flex-direction: column;
         text-align: center;
-        padding: 30px;
+        /* padding: 30px; */
     }
 
     .founder-photo {
