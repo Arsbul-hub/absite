@@ -343,7 +343,7 @@ body {
 
 /* Materials */
 .materials {
-    padding: 60px 0;
+    padding: 60px 0 0 0;
 }
 
 .materials__subtitle {
